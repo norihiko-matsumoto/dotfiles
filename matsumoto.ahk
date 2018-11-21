@@ -16,32 +16,39 @@ Return
 
 ;無変換でIME　OFF ##################################################
 vk1Dsc07B::IME_SET(0)
+Return
+
+;エクセル以外でもCntr＋Shift + ；で日付入力
+^+;::
+FormatTime,TimeString,,yyyy/MM/dd
+Send,%TimeString%
+Return
 
 ;fenrirでクリップボードのファイル名実行##################################################
 
-^vkF0sc03A::
-str = 
-
-		Send,^c
-		Sleep 60
-		;Send,{vkF0sc03A}
-		;Sleep 60
-		;Send,{!}
-
-		;str = "C:\Program Files\Asr\x86\AsrLoad.exe" /n "%Clipboard%"
-		Sleep 60
-		;MsgBox,%str%
-		Run,%Clipboard%
-		;Send,{Space}
-		;Sleep 60
-		;Send,"
-		;Sleep 60
-		;Send,^v
-		;Sleep 60
-		;Send,"
-		;Sleep 60
-		;Send,{Enter}
-Return
+;^vkF0sc03A::
+;str = 
+;
+;		Send,^c
+;		Sleep 60
+;		;Send,{vkF0sc03A}
+;		;Sleep 60
+;		;Send,{!}
+;
+;		;str = "C:\Program Files\Asr\x86\AsrLoad.exe" /n "%Clipboard%"
+;		Sleep 60
+;		;MsgBox,%str%
+;		Run,%Clipboard%
+;		;Send,{Space}
+;		;Sleep 60
+;		;Send,"
+;		;Sleep 60
+;		;Send,^v
+;		;Sleep 60
+;		;Send,"
+;		;Sleep 60
+;		;Send,{Enter}
+;Return
 
 ;コピーした内容にたいして>を先頭に追加する。##################################################
 ^+>::
