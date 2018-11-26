@@ -2,7 +2,6 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
 buf_Toggle   := 1
 buf_IMEMode := 0
 
@@ -221,6 +220,17 @@ Return
 
 }
 
+;Visual Studio CodeのVIMモードでEscでモード抜けても日本語入力がONのままになるので強制的にOFFに
+;#IfWinActive , ahk_class Chrome_WidgetWin_1 
+;{
+
+;Esc::Send,{Esc}
+;	Sleep 60
+;Return
+
+;#IfWinActive
+;}
+
 ^+F::
 clipboard := Explorer_GetSelected()
 return
@@ -321,4 +331,6 @@ Explorer_Get(hwnd="",selection=false)
 			ret .= item.path "`n"
 	}
 	return Trim(ret,"`n")
+
+
 }

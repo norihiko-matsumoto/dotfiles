@@ -1,10 +1,12 @@
 set number
-filetype on
+set fenc=utf-8
+set showcmd
+set cursorline
+set cursorcolumn
+set showmatch
 set ignorecase
 set smartcase
 set incsearch
-set hlsearch
-set title
-set clipboard=unnamed,autoselect
-syntax on
+set wrapscan
+set columns=180
 
