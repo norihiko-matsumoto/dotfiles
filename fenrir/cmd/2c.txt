@@ -1,0 +1,8 @@
+[.***;
+CopyPath|clip.exe %P
+CopyFileName|clip.exe %F
+CopyParentPath|clip.exe %D
+----------------------------------------
+Copy"PathName"|clip.exe "%P"
+Copy"ParentPath"|clip.exe "%D"
+]

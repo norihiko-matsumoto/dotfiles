@@ -1,0 +1,16 @@
+;[.extension;
+;MenuText|CommandLine|WorkingDirectory|nShow
+;]
+
+;[.***;
+;ParentDirectory|"%D"
+;]
+
+[.\\\;
+RepoBrowser|"C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe " /command:repobrowser /path:"%P"
+Dialog|"C:\DialogHandler-1.0.014\DialogHandler.x86-32.exe " "%P"
+]
+[.???;
+ParentDirectry|"C:\Asr\AsrLoad.exe " /n "%D"
+RepoBrowser|"C:\Program Files\TortoiseSVN\bin\TortoiseProc.exe " /command:repobrowser /path:"%P"
+]

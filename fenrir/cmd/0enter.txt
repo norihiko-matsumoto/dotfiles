@@ -1,0 +1,32 @@
+;[.extension;
+;MenuText|CommandLine|WorkingDirectory|nShow
+;]
+
+
+[.\\\;
+ShellExecute|d:\Asr\AsrLoad.exe /i "%P"
+]
+[.///; .txt; .ini; .sql
+notepad|"C:\Windows\notepad.exe" "%P"
+sakura|"C:\Program Files (x86)\sakura\sakura.exe" "%P"
+vim|"C:\Program Files\Vim\vim81\gvim.exe" "%P"
+
+]
+[.html; .htm
+IE|"C:\Program Files\Internet Explorer\iexplore.exe" "%P"
+Chrome|"C:\Program Files\Google\Chrome\Application\chrome.exe" "%P"
+sakura|"C:\Program Files\sakura\sakura.exe" "%P"
+notepad|"C:\Windows\notepad.exe" "%P"
+vim|"C:\Program Files\Vim\vim81\gvim.exe" "%P"
+VSC|"C:\Users\fin-24694\AppData\Local\Programs\Microsoft VS Code\Code.exe" "%P"
+]
+[.py
+cmd python 13.py
+]
+
+
+[.???;
+ShellExecute|"%P"
+]
+
+
