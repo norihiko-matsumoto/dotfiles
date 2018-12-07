@@ -1,7 +1,10 @@
+"**************************************************
+" プラグインの設定 
+"**************************************************
 set nocompatible
-filetype off
+"filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim " vundle�̃C���X�g�[����
+set rtp+=~/vimfiles/bundle/Vundle.vim " vundleのインストール先
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
@@ -12,8 +15,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'junegunn/fzf.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'previm/previm'
-
+Plugin 'airblade/vim-gitgutter'
 
 " Indent Seeing
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -21,9 +23,32 @@ Plugin 'nathanaelkane/vim-indent-guides'
 call vundle#end()
 filetype plugin indent on
 
-" ���̌�́A�D���Ȑݒ������
+
+"*******************************
+"手動プラグインの設 会社でGITHUBにつながらない。
+"***************************
+set runtimepath+=~/vimfiles/bundle/nerdtree
+set runtimepath+=~/vimfiles/bundle/tabular
+set runtimepath+=~/vimfiles/bundle/vim-indent-guides
+set runtimepath+=~/vimfiles/bundle/vim-markdown
+set runtimepath+=~/vimfiles/bundle/open-browser.vim
+
+"Plantuml対応版プレビューツール
+"https://github.com/kazuph/previm/tree/feature/add-plantuml-plugin
+set runtimepath+=~/vimfiles/bundle/previm
+
+"テンプレート拡張ツール
+"https://mattn.kaoriya.net/software/vim/20111025154246.htm
+set runtimepath+=~/vimfiles/bundle/sonictemplate-vim
+
+set runtimepath+=~/vimfiles/bundle/unite.vim
+
+
+"*********************************************
+" この後は、好きな設定を入れる
 set number
-set fenc=utf-8
+set fenc=utf-8 
+set fileencodings=utf-8,iso-2022-jpm,euc-jp,ucs-2le,ucs-2,cp932
 set showcmd
 set cursorline
 set cursorcolumn
@@ -33,3 +58,41 @@ set smartcase
 set incsearch
 set wrapscan
 set columns=180
+"項目        アクション
+"indent      字下げをバックスペースで消去可能
+"eol         行末をバックスペースで消去可能(行を連結)
+"start       挿入の開始点を超えてバックスペースで消去可能; CTRL-WとCTRL-Uは一度
+"            スタート地点で停止する。
+set backspace=indent,eol,start
+"半角文字の設定
+set guifont=MS_Gothic:h10
+
+"全角文字の設定
+set guifontwide=MS_Gothic:h10
+
+
+"**************************************************
+" <Leader>* によるキーバインド設定
+"**************************************************
+let mapleader = "\<Space>"
+
+"--------------------------------------------------
+" <Leader>d でNERDTree起動
+noremap <Leader>d :NERDTree
+ 
+"--------------------------------------------------
+"<space>pと<space>yでシステムのクリップボードにコピー＆ペーストする 
+noremap <Leader>p "*p
+noremap <Leader>y "*y
+
+"貼り付け時にペーストバッファが上書きされないようにする
+" vp doesn't replace paste buffer
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
