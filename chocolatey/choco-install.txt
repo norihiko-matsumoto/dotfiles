@@ -1,0 +1,103 @@
+# インストール手順
+
+## chocolatyでパッケージ管理  
+
+
+### chocolateyのセットアップ
+https://chocolatey.org/
+
+### 自動インストールするソフト
+choco install clcl.portable -y
+choco install winmerge-jp -y
+choco install 7zip.install -y
+choco install cmder -y
+choco install git -y
+choco install github -y
+choco install tortoisegit -y
+choco install vscode -y
+choco install mpc-hc -y
+choco install googlechrome -y
+choco install anaconda3 -y
+choco install autohotkey.install -y
+choco install itunes -y
+choco install rlogin -y
+choco install putty.portable -y
+choco install adobereader -y
+choco install winscp -y
+choco install irfanview -y
+choco install graphviz -y
+choco install plantuml -y
+choco install ripgrep -y
+choco install cloc -y
+choco install keepass.install -y
+choco install jdk8 -y
+choco install tomcat -y
+choco install vscode -y
+choco install googlechrome -y
+choco install anaconda3 -y
+choco install phraseexpress.portable -y
+choco install wsl -y
+choco install wsl-ubuntu-1804 -y
+choco install wsltty  -y
+choco install sakuraeditor -y
+
+
+
+
+
+### ポータブル版は以下のディレクトリに入っている
+C:\ProgramData\chocolatey\lib\
+
+
+##  手動インストール
+
+"Cmder の設定
+https://qiita.com/thrzn41/items/7dd3b1ec5e50bae9f03b
+TODO:設定ファイルをgithubで管理するように検討
+passを通す
+
+hoco install keepass.install
+### fenrir
+コマンドプロンプト（管理者権限で実行）
+mklink fenrir.ini c:\git\dotfiles\fenrir\data\fenrir.ini
+mklink instant.ini c:\git\dotfiles\fenrir\data\instant.ini
+
+
+Kindle
+google ime
+### relaxtools
+
+### zoom 
+### chat tool 
+
+### vim 右のコマンドは失敗した。choco install vim-tux.install -y
+### Asr  
+TODO: ASRの設定をdotfile化する。
+
+### Windows subsystem for linux  
+https://qiita.com/Aruneko/items/c79810b0b015bebf30bb
+#### 日本語化
+http://www.atmarkit.co.jp/ait/articles/1806/28/news043.html
+
+### wsltty setup 
+https://linuxfan.info/wsltty
+
+### java_home catarina_home pass setting  
+
+### VSCの設定を共有する記事をどこかで見た気がするが  
+
+### autohotkeyのスクリプトを共有する手順を作る  
+
+### bookmark  
+これもdotfiles化できるか。
+
+### GoogleIME  
+
+### PhraseExpress
+説明ページ、ポータブル版だから設定ファイルをクラウドにおけるハズ
+https://yossense.com/phrase-express-install/
+
+## スタートアップへの設定
+
+
+
