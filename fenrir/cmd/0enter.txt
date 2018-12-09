@@ -7,9 +7,9 @@
 ShellExecute|d:\Asr\AsrLoad.exe /i "%P"
 ]
 [.///; .txt; .ini; .sql
+vim|"C:\Program Files\Vim\vim81\gvim.exe" "%P"
 notepad|"C:\Windows\notepad.exe" "%P"
 sakura|"C:\Program Files (x86)\sakura\sakura.exe" "%P"
-vim|"C:\Program Files\Vim\vim81\gvim.exe" "%P"
 
 ]
 [.html; .htm
