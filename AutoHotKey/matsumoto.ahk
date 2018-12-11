@@ -22,6 +22,23 @@ Return
 vk1D::IME_SET(0)
 Return
 
+
+;メールアドレスの入力#######################
+:O:nog::norihiko.matsmoto@gmail.com
+Return
+:O:nos::norihiko.matsmoto@i.softbank.jp
+Return
+
+
+:O:osewa::
+strbk = %clipboard%
+Clipboard = 様`nお世話になっています。松本です。`n
+Sleep 100
+Send,^v
+
+Send,{Up}{Left}
+Return
+
 ;IEの処理
 #IfWinActive , ahk_class IEFrame
 {
@@ -40,14 +57,12 @@ FormatTime,TimeString,,yyyy/MM/dd
 Send,%TimeString%
 Return
 
-;Ctrl + Shift + ; でAs/Rでクリップボードのパスを開く（メールでパスを貰ったときとか##################################################
+;Ctrl + Shift + ; でAs/Rでクリップボードのパスを開く（メールでパスを貰ったときとか###
 ^+o::
 
 ;改行を除去する。
 str = %clipboard%
-;MsgBox,%str%
 str := RegExReplace(str , "\n|\r","")
-;MsgBox,%str%
 Run,C:\Asr\AsrLoad.exe %str%
 
 Return
@@ -310,3 +325,20 @@ Explorer_Get(hwnd="",selection=false)
 	return Trim(ret,"`n")
 }
 
+; AutoHotkey.ahkをctrl+sで保存した時にリロードする(sakuraだと効かない)
+
+SetTitleMatchMode,2
+
+#IfWinActive, matsumoto.ahk
+
+^s::
+
+    Send,^s
+
+    Sleep,250
+
+    Reload
+
+return
+
+#IfWinActive
