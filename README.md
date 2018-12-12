@@ -51,8 +51,7 @@ C:\ProgramData\chocolatey\lib\
 
 ##  手動インストール
 
-### vimの設定  
-dotfilesをgithubから取得、シンボリックリンクの設定  
+
 
 ### Cmder の設定
 https://qiita.com/thrzn41/items/7dd3b1ec5e50bae9f03b  
@@ -81,7 +80,9 @@ clip.exeをコピーする。
 
 ### vim 右のコマンドは失敗した。choco install vim-tux.install -y
 https://www.kaoriya.net/software/vim/
+香りやさんから取得する。  
 64bit版をインストールするが、c:直下にしたほうが良いか。  
+dotfilesをgithubから取得、シンボリックリンクの設定  
 
 ### Asr  
 TODO: ASRの設定をdotfile化する。
@@ -93,7 +94,7 @@ http://www.atmarkit.co.jp/ait/articles/1806/28/news043.html
 #### cmderからの接続  
 https://laboradian.com/installation-and-setting-of-wsl/  
 #### vimの設定  
-dotfilesを取得してhomeの下に.vimとvimfilesのシンボリックリンクを作成したらうまく行った。  
+dotfilesを取得してhomeの下に.vimとvimfilesのシンボリックリンクを作成したらうまく行った。 
 #### fzf  
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf  
 
@@ -104,6 +105,8 @@ https://qiita.com/aktsh/items/18f0cfdabfce3b750ff5
 #### ripgrep 
 https://qiita.com/kikuchi_kentaro/items/9dc441f64c17a38aad96  
 この手順でうまく行った。  
+#### Cmder  
+WSL bashを起動できるように設定  
 
 
 ### java_home catarina_home pass setting  
