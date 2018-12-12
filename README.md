@@ -31,15 +31,15 @@ choco install graphviz -y
 choco install plantuml -y
 choco install ripgrep -y
 choco install jdk8 -y
-choco install tomcat -y
-choco install vscode -y
-choco install anaconda3 -y
-choco install wsl -y
-choco install wsl-ubuntu-1804 -y
-choco install wsltty  -y
-choco install sakuraeditor -y
-choco install sourcetree -y
-
+choco install tomcat -y  
+choco install vscode -y  
+choco install anaconda3 -y  
+choco install wsl -y  
+choco install wsl-ubuntu-1804 -y  
+choco install wsltty  -y  
+choco install sakuraeditor -y  
+choco install sourcetree -y  
+ 
 ### 自動インストールをやめたソフト(いつか復活するかも）
 choco install cloc -y  あまり使わなそう。
 choco install keepass.install -y
@@ -115,17 +115,17 @@ https://qiita.com/kikuchi_kentaro/items/9dc441f64c17a38aad96
 →済
 
 ### bookmark  
-これもdotfiles化できるか。google chromeの共有で良いか。
+これもdotfiles化できるか。google chromeの共有で良いか。  
 
 ### GoogleIME  
 
 
 ## スタートアップへの設定
-Win+R　→　shell:startup
-clcl
-autohotkey
-fenrir
+Win+R　→　shell:startup  
+clcl  
+autohotkey  
+fenrir  
 
 
-### Windows10 update 1809
-ダークモードの設定
+### Windows10 update 1809  
+ダークモードの設定  
