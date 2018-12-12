@@ -85,7 +85,7 @@ https://www.kaoriya.net/software/vim/
 dotfilesをgithubから取得、シンボリックリンクの設定  
 
 ### Asr  
-TODO: ASRの設定をdotfile化する。
+
 
 ### Windows subsystem for linux  
 https://qiita.com/Aruneko/items/c79810b0b015bebf30bb  
@@ -108,6 +108,7 @@ https://qiita.com/kikuchi_kentaro/items/9dc441f64c17a38aad96
 #### Cmder  
 WSL bashを起動できるように設定  
 
+---------
 
 ### java_home catarina_home pass setting  
 
@@ -119,12 +120,13 @@ WSL bashを起動できるように設定
 ### GoogleIME  
 
 
-## スタートアップへの設定
+### スタートアップへの設定
 Win+R　→　shell:startup  
 clcl  
 autohotkey  
 fenrir  
 
 
-## Windows10 update 1809  
+### Windows10 update 1809  
 ダークモードの設定  
+
