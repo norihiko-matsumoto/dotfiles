@@ -230,6 +230,8 @@ return
 ^+S::
 clipboard := Explorer_GetPath()
 return
+
+^+N::
 	;		path := Explorer_GetPath()
 	;		all := Explorer_GetAll()
 	;		sel := Explorer_GetSelected()
