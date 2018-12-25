@@ -37,6 +37,7 @@ choco install wsl-ubuntu-1804 -y
 choco install wsltty  -y
 choco install sakuraeditor -y
 choco install sourcetree -y
+choco install monosnap -y
 
 ### 自動インストールをやめたソフト(いつか復活するかも）
 choco install cloc -y  あまり使わなそう。
