@@ -16,13 +16,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-expand-region'
 "Plugin 'haya14busa/vim-migemo'
 
 " Indent Seeing
 Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 
 
 "*******************************
