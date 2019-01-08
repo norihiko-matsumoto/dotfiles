@@ -32,11 +32,8 @@ choco install plantuml -y
 choco install ripgrep -y  
 choco install jdk8 -y  
 choco install tomcat -y    
-choco install vscode -y  
-choco install anaconda3 -y  
 choco install wsl -y  
 choco install wsl-ubuntu-1804 -y  
-choco install wsltty  -y  
 choco install sakuraeditor -y  
 choco install sourcetree -y  
  
