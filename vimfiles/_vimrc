@@ -18,10 +18,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-expand-region'
 "Plugin 'haya14busa/vim-migemo'
-
+"PluginC:\Program Files (x86)\sakura\sakura.exe 'reireias/vim-cheatsheet'
 " Indent Seeing
 Plugin 'nathanaelkane/vim-indent-guides'
-
+Plugin 'terryma/vim-multiple-cursors'
 call vundle#end()
 "filetype plugin indent on
 
@@ -49,7 +49,7 @@ set runtimepath+=~/vimfiles/bundle/unite.vim
 "*********************************************
 " この後は、好きな設定を入れる
 set number
-set fenc=utf-8 
+"set fenc=utf-8 
 set fileencodings=utf-8,iso-2022-jpm,euc-jp,ucs-2le,ucs-2,cp932
 set showcmd
 set cursorline
@@ -59,7 +59,7 @@ set ignorecase
 set smartcase
 set incsearch
 set wrapscan
-set columns=180
+set columns=300
 "項目        アクション
 "indent      字下げをバックスペースで消去可能
 "eol         行末をバックスペースで消去可能(行を連結)
