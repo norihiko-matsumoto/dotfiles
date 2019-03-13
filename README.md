@@ -73,6 +73,7 @@ clip.exeをコピーする。
 ### Kindle  
 日科技連やIPAのPDFを登録する。  
 
+### A5M2
 
 ### relaxtools  
 
