@@ -27,13 +27,7 @@ choco install putty.portable -y
 choco install adobereader -y  
 choco install winscp -y  
 choco install irfanview -y  
-choco install graphviz -y  
-choco install plantuml -y  
 choco install ripgrep -y  
-choco install jdk8 -y  
-choco install tomcat -y    
-choco install wsl -y  
-choco install wsl-ubuntu-1804 -y  
 choco install sakuraeditor -y  
 choco install sourcetree -y  
 choco install monosnap -y
@@ -42,6 +36,15 @@ choco install monosnap -y
 choco install cloc -y  あまり使わなそう。  
 choco install keepass.install -y  
 choco install phraseexpress.portable -y 個人用のみ無償。会社用は有償  
+choco install jdk8 -y  
+choco install tomcat -y    
+choco install wsl -y  
+choco install wsl-ubuntu-1804 -y  
+
+vscodeでのMARKDOWN編集からCodiMDに移行したため
+choco install graphviz -y  
+choco install plantuml -y  
+
 
 ### ポータブル版は以下のディレクトリに情報が記録されるのか？
 C:\ProgramData\chocolatey\lib\  
