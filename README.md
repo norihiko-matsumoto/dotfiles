@@ -31,7 +31,11 @@ choco install ripgrep -y
 choco install sakuraeditor -y  
 choco install sourcetree -y  
 choco install monosnap -y
- 
+
+### インストールした後のアップグレード
+choco upgrade all
+
+
 ### 自動インストールをやめたソフト(いつか復活するかも）
 choco install cloc -y  あまり使わなそう。  
 choco install keepass.install -y  
