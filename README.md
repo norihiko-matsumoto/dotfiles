@@ -33,7 +33,7 @@ choco install sourcetree -y
 choco install monosnap -y
 
 ### インストールした後のアップグレード
-choco upgrade all
+choco upgrade all -y
 
 
 ### 自動インストールをやめたソフト(いつか復活するかも）
