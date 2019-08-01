@@ -1,11 +1,11 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿;#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 ;#Include IME.ahk
 ;#InstallKeybdHook
 
 
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+;SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+;SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 buf_Toggle   := 1
 buf_IMEMode := 0
@@ -22,21 +22,49 @@ Return
 vk1D::IME_SET(0)
 Return
 
+;変換キーでAPP　キー
+vk1C::AppsKey
+
+;無変換とマウスドラッグでウィンドウ移動
+;https://yuruaki.blog.fc2.com/blog-entry-92.html
+vk1D & LButton::
+	CoordMode,Mouse,Screen
+	MouseGetPos,sx,sy,mh
+	WinGetPos,wx,wy,,,ahk_id %mh%
+	while(GetKeyState("LButton","P")){
+		MouseGetPos,mx,my
+		WinMove,ahk_id %mh%,,wx-(sx-mx),wy-(sy-my)
+	}
+return
 
 ;メールアドレスの入力#######################
-:O:nog::norihiko.matsmoto@gmail.com
+:O:nog::norihiko.matsumoto@gmail.com
 Return
-:O:nos::norihiko.matsmoto@i.softbank.jp
+:O:nos::norihiko.matsumoto@i.softbank.jp
 Return
+:O:noo::n-matsmoto@ous.co.jp
+Return
+:O:admin::admin@dfftrpu7.onmicrosoft.com
+Return
+
+
+;サーバー名の入力####################
+:O:svs::\\svrfil01\社内管理
+Return
+:O:svd::\\svrfil01\Doc
+Return
+:O:sva::\\svrfil01\Archives
+Return
+
 
 
 :O:osewa::
 strbk = %clipboard%
-Clipboard = 様`nお世話になっています。松本です。`n
+Clipboard = 様`nお世話になっています。オーユーシステム松本です。`n
 Sleep 100
 Send,^v
 
-Send,{Up}{Left}
+;Send,{Up}{Left}
 Return
 
 ;IEの処理
@@ -57,15 +85,14 @@ FormatTime,TimeString,,yyyy/MM/dd
 Send,%TimeString%
 Return
 
-;Ctrl + Shift + ; でAs/Rでクリップボードのパスを開く（メールでパスを貰ったときとか###
-^+o::
+
 
 ;改行を除去する。
-str = %clipboard%
-str := RegExReplace(str , "\n|\r","")
-Run,C:\Asr\AsrLoad.exe %str%
+;str = %clipboard%
+;str := RegExReplace(str , "\n|\r","")
+;Run,C:\Asr\AsrLoad.exe %str%
 
-Return
+;Return
 
 
 ;コピーした内容に>を先頭に追加する。##################################################
@@ -89,6 +116,107 @@ str =
 strbk = 
 str_row =
 Return
+
+;Ctrl + Shift + k(oumoku)で起動する#######################
+^+k::
+
+IME_SET(0) ;IMEをOFFに
+Sleep 30
+InputBox, OutputVar
+Run, cmd /K rg -i -E sjis %OutputVar% C:\dict\ | fzf | nkf | clip
+return
+
+;辞書にメモを入力(dictionary)
+^+d:: 
+InputBox, OutputVar 
+FileAppend ,%OutputVar%`n ,c:\dict\mydict.txt, CP932
+Return
+
+
+;項目辞書で検索したときにCtrl＋Enterでコマンドプロンプトを閉じるまで実行
+#IfWinActive ahk_class ConsoleWindowClass
+^+q::
+ sleep 500
+ IME_SET(0) ;IMEをOFFに
+ sleep 500
+ Send, exit{enter}
+return
+#IfWinActive 
+
+
+;Chromeのショートカットに限定
+#IfWinActive ahk_class Chrome_WidgetWin_1
+;Ctrl + Shift + C でhttpのttpから後ろをコピーする。
+;Ctrl + L等 でアドレスバーにフォーカスがあることが動作条件
+
+^+c::
+ Send, {Home}
+ sleep 100
+ Send, {Right}
+ sleep 100
+ Send, +{End}
+ sleep 100
+ Send, ^c
+
+#IfWinActive
+
+
+
+; Thunderbirdに関する処理##################################################
+#IfWinActive ahk_class MozillaWindowClass
+{
+; メッセージの転送はCtrl+fでできるように。
+;^f::^e
+Return
+
+;メッセージ一覧で下へ
+;fffj::f
+Return
+;メッセージ一覧で上へ
+;k::b
+Return
+
+;Escでウィンドウを閉じる
+;Esc::^w
+;Return
+
+
+;Ctrl + Shift + i でInboxへ移動　これは人の環境によって違うかも。メニューをたどるだけなので。
+^+i::Send,!go{Down}{Right}{Down}{Enter}
+Return
+
+;Ctrl + Shift + s でSendへ移動　これは人の環境によって違うかも。メニューをたどるだけなので。
+^+s::Send,!go{Down}{Right}{Down}{Down}{Down}{Enter}
+Return
+
+;Ctrl + Shift + c でAr(c)hiveへ移動　年別にアーカイブフォルダが作られるのでとりあえず2019にした
+;Ctrl + Shift + a はファイル添付、Ctrl + Shift + rは全員に返信で使用できず。
+^+c::Send,!go{Down}{Right}{Down}{Down}{Down}{Down}{Right}{Down}{Enter}
+Return
+
+
+
+
+
+;Ctrl + Shift + t でMarkDownのTableテンプレート挿入
+;うまく動かないときがある。
+;^+t::Send,|{Space}|{Space}|{Space}{Enter}|---|---|---{Enter}|{Space}|{Space}|{Space}{Enter}|{Space}|{Space}|{Space}{Enter}
+Return
+
+;Ctrl + Shift + t でMarkDownのTableテンプレート挿入Ver.2
+^+t::
+	Clipboard = | | | `n |---|---|--- `n | | | `n | | | `n
+Sleep 100
+Send,^v
+Return
+
+;Ctrl + Shift + ; でAs/Rでクリップボードのパスを開く（メールでパスを貰ったときとか###
+;^+o::
+
+
+}
+#IfWinActive ###################
+
 
 ; OUTLOOKのスケジューラに関する処理##################################################
 #IfWinActive ahk_class rctrl_renwnd32
@@ -160,7 +288,9 @@ Return
 #IfWinActive , ahk_class XLMAIN
 {
 
- ^+v::Send,!hvs　;形式を選択して貼り付け
+;形式を選択して貼り付け
+ ^+v::Send,!hvs　
+Return
  ^+r::Send,!hw ;折り返し表示
 
 
@@ -179,6 +309,7 @@ Return
 
 ;数値書式にする
 ^+0::Send,^1{Tab}{Down}{Enter}
+Return
 
 ;該当のファイルが格納されているフォルダをAS/Rで開く
 
