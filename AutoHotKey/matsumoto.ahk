@@ -42,7 +42,7 @@ return
 Return
 :O:nos::norihiko.matsumoto@i.softbank.jp
 Return
-:O:noo::n-matsmoto@ous.co.jp
+:O:no::n-matsumoto@ous.co.jp
 Return
 :O:admin::admin@dfftrpu7.onmicrosoft.com
 Return

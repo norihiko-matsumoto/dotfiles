@@ -12,9 +12,9 @@ set smartcase
 set incsearch
 set wrapscan
 set columns=300
-set backupdir=C:\temp
-set directory=C:\temp
-set undodir=C:\temp
+set noswapfile
+set nobackup
+set undofile
 "項目        アクション
 "indent      字下げをバックスペースで消去可能
 "eol         行末をバックスペースで消去可能(行を連結)
