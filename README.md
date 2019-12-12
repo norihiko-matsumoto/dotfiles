@@ -30,7 +30,7 @@ choco install irfanview -y
 choco install ripgrep -y  
 choco install sakuraeditor -y  
 choco install sourcetree -y  
-choco install monosnap -y
+
 
 ### インストールした後のアップグレード
 choco upgrade all -y
@@ -55,7 +55,12 @@ C:\ProgramData\chocolatey\lib\
 
 
 ##  手動インストール
+### Monosnap 
+商業利用有料化に伴い必要であればインストール
+choco install monosnap -y
 
+### Monosnap代替
+https://github.com/ShareX
 
 
 ### Cmder の設定
@@ -76,6 +81,8 @@ clip.exeをコピーする。
 
 ### Kindle  
 日科技連やIPAのPDFを登録する。  
+
+
 
 ### A5M2
 ### Remote Desktop Connection Manager
