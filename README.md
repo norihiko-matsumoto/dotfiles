@@ -63,7 +63,7 @@ choco install monosnap -y
 https://github.com/ShareX
 
 
-### Cmder の設定
+### Cmder の設定　　←つかわなくなった。
 https://qiita.com/thrzn41/items/7dd3b1ec5e50bae9f03b  
 passを通す
 setting - startup Environment に以下を設定
@@ -99,6 +99,9 @@ https://www.kaoriya.net/software/vim/
 香りやさんから取得する。  
 64bit版をインストールするが、c:直下にしたほうが良いか。  
 dotfilesをgithubから取得、シンボリックリンクの設定  
+`ln -s vimfiles ~/dotfiles/vimfiles`
+
+
 
 ### Asr  
 
@@ -111,6 +114,11 @@ http://www.atmarkit.co.jp/ait/articles/1806/28/news043.html
 https://laboradian.com/installation-and-setting-of-wsl/  
 #### vimの設定  
 dotfilesを取得してhomeの下に.vimとvimfilesのシンボリックリンクを作成したらうまく行った。 
+`ln -s  ~/dotfiles/vimfiles　vimfiles`
+`ln -s  ~/dotfiles/vimfiles/_vimrc .vim`
+
+
+
 #### fzf  
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf  
 
