@@ -115,7 +115,7 @@ https://laboradian.com/installation-and-setting-of-wsl/
 #### vimの設定  
 dotfilesを取得してhomeの下に.vimとvimfilesのシンボリックリンクを作成したらうまく行った。 
 `ln -s  ~/dotfiles/vimfiles　vimfiles`
-`ln -s  ~/dotfiles/vimfiles/_vimrc .vim`
+`ln -s  ~/dotfiles/vimfiles/_vimrc .vimrc`
 
 
 
