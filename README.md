@@ -1,6 +1,5 @@
 # dotfiles
-
-# インストール手順
+[toc]
 
 ## chocolatyでパッケージ管理  
 
@@ -30,7 +29,8 @@ choco install irfanview -y
 choco install ripgrep -y  
 choco install sakuraeditor -y  
 choco install sourcetree -y  
-
+choco install pdfxchangeeditor -y
+choco install sharex -y
 
 ### インストールした後のアップグレード
 choco upgrade all -y
